@@ -1,0 +1,317 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    color: #333;
+  }
+  
+  #app {
+    background-color: #fff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+  }
+  
+  /* Hide elements */
+  .hidden {
+    display: none !important;
+  }
+  
+  /* Login Page */
+  #login-page {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  #login-page h2 {
+    margin-bottom: 20px;
+    color: #d6336c;
+  }
+  
+  #login-form {
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  #login-form label {
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  #login-form input {
+    padding: 10px;
+    border: 2px solid #d6336c;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  #login-form input:focus {
+    border-color: #a61e4d;
+    outline: none;
+  }
+  
+  #login-form button {
+    background-color: #d6336c;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #login-form button:hover {
+    background-color: #a61e4d;
+  }
+  
+  #generate-password {
+    background-color: #6f42c1;
+    margin-bottom: 10px;
+  }
+  
+  #generate-password:hover {
+    background-color: #4e2a8c;
+  }
+  
+  /* Navigation */
+  nav {
+    background-color: #d6336c;
+    padding: 10px 20px;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-list li {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: #a61e4d;
+  }
+  
+  .logout-btn {
+    background-color: #6f42c1;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 120px;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: #4e2a8c;
+  }
+  
+  /* Main content */
+  main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .page-content {
+    display: none;
+  }
+  
+  .page-content.active {
+    display: block;
+  }
+  
+  /* Summary cards */
+  .summary-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .card {
+    flex: 1 1 200px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .card h3 {
+    margin-bottom: 15px;
+    color: #d6336c;
+  }
+  
+  .card p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .income-card {
+    border-top: 5px solid #28a745;
+  }
+  
+  .expenses-card {
+    border-top: 5px solid #dc3545;
+  }
+  
+  .balance-card {
+    border-top: 5px solid #007bff;
+  }
+  
+  /* Forms */
+  .transaction-form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .transaction-form input {
+    flex: 1 1 200px;
+    padding: 10px;
+    border: 2px solid #d6336c;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  .transaction-form input:focus {
+    border-color: #a61e4d;
+    outline: none;
+  }
+  
+  .transaction-form button {
+    background-color: #d6336c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    transition: background-color 0.3s;
+  }
+  
+  .transaction-form button:hover {
+    background-color: #a61e4d;
+  }
+  
+  /* Transaction Lists */
+  .transaction-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    border-top: 2px solid #d6336c;
+    padding-top: 10px;
+  }
+  
+  .transaction-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .transaction-list li.income {
+    color: #28a745;
+  }
+  
+  .transaction-list li.expense {
+    color: #dc3545;
+  }
+  
+  /* Delete button inside lists */
+  .delete-btn {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-btn:hover {
+    background-color: #a71d2a;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #d6336c;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    margin-top: auto;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .nav-list {
+      flex-direction: column;
+    }
+  
+    .transaction-form {
+      flex-direction: column;
+    }
+  
+    .transaction-form input,
+    .transaction-form button {
+      width: 100%;
+    }
+  
+    .summary-cards {
+      flex-direction: column;
+    }
+  }
+  

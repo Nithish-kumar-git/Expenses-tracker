@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home Budget</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Login Page -->
+    <section id="login-page" class="page active">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required placeholder="Enter your username" />
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" required placeholder="Enter your password" />
+        
+        <button type="button" id="generate-password">Generate Password</button>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- Main App Pages -->
+    <section id="main-app" class="hidden">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#" data-page="budget-summary" class="nav-link active">Budget Summary</a></li>
+          <li><a href="#" data-page="income-tracker" class="nav-link">Income Tracker</a></li>
+          <li><a href="#" data-page="expenses-tracker" class="nav-link">Expenses Tracker</a></li>
+          <li><a href="#" data-page="transaction-history" class="nav-link">Transaction History</a></li>
+          <li><button id="logout-btn" class="logout-btn">Logout</button></li>
+        </ul>
+      </nav>
+
+      <main>
+        <!-- Budget Summary Page -->
+        <section id="budget-summary" class="page-content active">
+          <h2>Budget Summary</h2>
+          <div class="summary-cards">
+            <div class="card income-card">
+              <h3>Income</h3>
+              <p id="total-income">0 USD</p>
+            </div>
+            <div class="card expenses-card">
+              <h3>Expenses</h3>
+              <p id="total-expenses">0 USD</p>
+            </div>
+            <div class="card balance-card">
+              <h3>Balance</h3>
+              <p id="balance">0 USD</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Income Tracker Page -->
+        <section id="income-tracker" class="page-content">
+          <h2>Income Tracker</h2>
+          <form id="income-form" class="transaction-form">
+            <input type="text" id="income-description" placeholder="Income description" required />
+            <input type="number" id="income-amount" placeholder="Amount (USD)" min="0.01" step="0.01" required />
+            <button type="submit">Add Income</button>
+          </form>
+          <ul id="income-list" class="transaction-list"></ul>
+        </section>
+
+        <!-- Expenses Tracker Page -->
+        <section id="expenses-tracker" class="page-content">
+          <h2>Expenses Tracker</h2>
+          <form id="expenses-form" class="transaction-form">
+            <input type="text" id="expense-description" placeholder="Expense description" required />
+            <input type="number" id="expense-amount" placeholder="Amount (USD)" min="0.01" step="0.01" required />
+            <button type="submit">Add Expense</button>
+          </form>
+          <ul id="expenses-list" class="transaction-list"></ul>
+        </section>
+
+        <!-- Transaction History Page -->
+        <section id="transaction-history" class="page-content">
+          <h2>Transaction History</h2>
+          <ul id="transaction-list" class="transaction-list"></ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>© 2025 Home Budget. All rights reserved.</p>
+      </footer>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
